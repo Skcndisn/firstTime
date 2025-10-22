@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VI TOP UP</title>
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body style="background-color: #2b0040;"> 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom py-2">
+    <div class="container-fluid">
+      <!-- Kiri -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCodashop">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand d-flex align-items-center ms-2" href="#">
+        💎 <span class="ms-2 fw-bold">VI TOP UP</span>
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarCodashop">
+        <span class="navbar-text navbar-text-custom ms-3">
+          Website top-up tercepat dan terpercaya untuk pembelian kredit game 
+        </span>
+      </div>
+
+      <!-- Kanan -->
+      <div class="d-flex align-items-center gap-3">
+        <i class="bi bi-search icon text-white"></i>
+        <i class="bi bi-coin icon text-warning"></i>
+        <button class="btn btn-daftar">Daftar</button>
+      </div>
+    </div>
+  </nav>
+
+<!--Game Detail Section MLBB-->
+<section class="detail-section" id="mlbb-section">
+  <a href="uts.html">
+    <button id="backHome" class="btn-back">← Kembali</button>
+  </a>
+  <div class="game-header">
+    <img src="foto\emel.jpeg" alt="MLBB">
+    <div>
+      <h2>Mobile Legends: Bang Bang</h2>
+      <span class="secure-badge">🔒 Pembayaran yang Aman</span>
+    </div>
+  </div>
+
+  <div class="info-text">
+    <p>VI TOP UP menawarkan top up ML yang mudah, aman, dan praktis. Bayar dengan nyaman menggunakan GoPay, Dana, dan QRIS</p>
+  </div>
+
+  <!--FORM-->
+    <div class="form-container">
+      <div class="form-box">
+        <div class="d-flex align-items-center mb-4">
+          <div class="step-number">1</div>
+          <h4 class="m-0" style="color: black;">Masukkan ID</h4>
+        </div>
+        <div class="input-group">
+          <input type="text" pattern="[0-9]*" id="userId" placeholder="Masukkan User ID" required>
+          <input type="text" pattern="[0-9]*" id="zoneId" placeholder="Zone ID" required>
+        </div>
+        <small style="color: black;">Contoh: 12345678(1234)</small>
+      </div>
+    </div>
+    <!--TOP UP-->
+    <div class="payment-section">
+      <div class="form-box">
+        <div class="d-flex align-items-center mb-4">
+          <div class="step-number">2</div>
+          <h4 class="m-0">Pilih Nominal TOP UP</h4>
+        </div>
+        <div class="topup-grid">
+          <div class="topup-card" onclick="selectTopup(this)" data-harga="1423" id="mlbb1">
+            <span class="best">BEST SELLER</span>
+            <h4 style="color: white;">5 Diamonds</h4>
+            <p style="color: white;">Rp 1.423</p>
+          </div>
+          <div class="topup-card" onclick="selectTopup(this)" data-harga="76000" id="mlbb2">
+            <span class="best">BEST SELLER</span>
+            <h4 style="color: white;">296 Diamonds</h4>
+            <p style="color: white;">Rp 76.000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--PAYMENT-->
+    <div class="form-box">
+        <div class="payment-section">
+          <div class="d-flex align-items-center mb-4">
+            <div class="step-number">3</div>
+            <h4 class="m-0">Pilih Pembayaran</h4>
+          </div>
+          <div class="row g-3">
+            <!-- Baris 1 -->
+            <div class="col-6 col-md-2">
+              <div class="payment-card" onclick="selectPayment(this)" data-bayar="GoPay">
+                <img src="foto pembayaran/gopay.png" alt="GoPay">
+                <div class="payment-name">GoPay</div>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-2">
+              <div class="payment-card" onclick="selectPayment(this)" data-bayar="Dana">
+                <img src="foto pembayaran/dana.png" alt="Dana">
+                <div class="payment-name">Dana</div>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-2">
+              <div class="payment-card" onclick="selectPayment(this)" data-bayar="QRIS">
+                <img src="foto pembayaran/qris.png" alt="QRIS">
+                <div class="payment-name">QRIS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!--RECEIPT-->
+      <button id="topupBtn" class="btn-primary" onclick="openReceipt()" disabled>Beli Sekarang</button>
+      <div class="receipt-popup" id="popup-receipt" style="display: none; ">
+        <div class="receipt-content">
+          <span class="close-btn" onclick="closeReceipt()">&times;</span>
+          <h2>Struk Pembelian</h2>
+          <p><strong>Game:</strong> Mobile Legends: Bang Bang</p>
+          <p><strong>User ID:</strong> <span id="receipt-userId"></span></p>
+          <p><strong>Zone ID:</strong> <span id="receipt-zoneId"></span></p>
+          <p><strong>Nominal TOP UP:</strong> <span id="receipt-topup"></span></p>
+          <p><strong>Total Harga:</strong> Rp <span id="receipt-harga"></span></p>
+          <p>Terima kasih telah melakukan pembelian di VI TOP UP!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <script src="script.js"></script>
+</body>
+</html>
